@@ -1,6 +1,6 @@
 // --- CONFIGURACIÓN Y CONEXIÓN ---
 // IMPORTANTE: Reemplaza con la URL de tu servidor en Render
-const SERVER_URL = 'https://snake-backend-xyz.onrender.com'; 
+const SERVER_URL = 'https://snake-game-backend-btux.onrender.com'; 
 const socket = io(SERVER_URL);
 
 const mainMenu = document.getElementById('main-menu');
