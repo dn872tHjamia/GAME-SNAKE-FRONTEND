@@ -9,6 +9,7 @@
 <body>
     <div id="main-menu">
         <h1>Snake Multijugador 🐍</h1>
+        <input type="text" id="nameInput" placeholder="Escribe tu nombre" maxlength="12">
         <button id="createBtn">Crear Partida</button>
         <div class="join-container">
             <input type="text" id="roomInput" placeholder="Código de la sala">
@@ -18,10 +19,10 @@
 
     <div id="lobby" class="hidden">
         <h2>Sala de Espera</h2>
-        <p>Código de la sala: <strong id="room-code"></strong></p>
-        <h3>Jugadores:</h3>
+        <p>Código: <strong id="room-code"></strong></p>
+        <h3>Jugadores Conectados:</h3>
         <ul id="player-list"></ul>
-        <button id="start-btn" class="hidden">Empezar Partida</button>
+        <button id="start-btn" class="hidden">👑 Empezar Partida</button>
     </div>
 
     <div id="game-container" class="hidden">
