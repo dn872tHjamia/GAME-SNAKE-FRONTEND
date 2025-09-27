@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Multijugador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu">
+        <h1>Snake Multijugador 🐍</h1>
+        <button id="createBtn">Crear Partida</button>
+        <div class="join-container">
+            <input type="text" id="roomInput" placeholder="Código de la sala">
+            <button id="joinBtn">Unirse</button>
+        </div>
+    </div>
+
+    <div id="lobby" class="hidden">
+        <h2>Sala de Espera</h2>
+        <p>Código de la sala: <strong id="room-code"></strong></p>
+        <h3>Jugadores:</h3>
+        <ul id="player-list"></ul>
+        <button id="start-btn" class="hidden">Empezar Partida</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <canvas id="gameCanvas"></canvas>
+        <div id="scoreboard">
+            <h2>Puntuación</h2>
+            <ul id="scoreList"></ul>
+        </div>
+    </div>
+    
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
