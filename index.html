@@ -16,15 +16,13 @@
             <button id="joinBtn">Unirse</button>
         </div>
     </div>
-
     <div id="lobby" class="hidden">
         <h2>Sala de Espera</h2>
-        <p>Código: <strong id="room-code"></strong></p>
-        <h3>Jugadores Conectados:</h3>
+        <p>Código: <strong id="room-code"></strong> (¡Cópialo y compártelo!)</p>
+        <h3>Jugadores:</h3>
         <ul id="player-list"></ul>
         <button id="start-btn" class="hidden">👑 Empezar Partida</button>
     </div>
-
     <div id="game-container" class="hidden">
         <canvas id="gameCanvas"></canvas>
         <div id="scoreboard">
@@ -32,7 +30,6 @@
             <ul id="scoreList"></ul>
         </div>
     </div>
-    
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <script src="game.js"></script>
 </body>
