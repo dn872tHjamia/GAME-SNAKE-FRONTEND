@@ -47,17 +47,27 @@ socket.on('error', (message) => {
 
 // --- Lógica de Menús y Lobby ---
 createBtn.addEventListener('click', () => {
-    const playerName = nameInput.value.trim() || 'Anónimo';
+    const playerName = nameInput.value.trim();
+    if (playerName === "") {
+        alert("Por favor, escribe un nombre.");
+        return;
+    }
     console.log('Enviando evento "createRoom" con nombre:', playerName);
-    socket.emit('createRoom', { playerName });
+    socket.emit('createRoom', { playerName: playerName });
 });
 
 joinBtn.addEventListener('click', () => {
-    const roomId = roomInput.value.trim();
-    const playerName = nameInput.value.trim() || 'Anónimo';
+    const roomId = roomInput.value.trim().toUpperCase();
+    const playerName = nameInput.value.trim();
+    if (playerName === "") {
+        alert("Por favor, escribe un nombre.");
+        return;
+    }
     if (roomId) {
         console.log(`Enviando evento "joinRoom" a sala ${roomId} con nombre:`, playerName);
-        socket.emit('joinRoom', { roomId, playerName });
+        socket.emit('joinRoom', { roomId: roomId, playerName: playerName });
+    } else {
+        alert("Por favor, introduce un código de sala.");
     }
 });
 
@@ -76,7 +86,7 @@ socket.on('roomCreated', (data) => {
 
 socket.on('updatePlayers', (data) => {
     console.log('Evento "updatePlayers" recibido:', data);
-    if (!currentRoomId) currentRoomId = roomInput.value.trim();
+    if (!currentRoomId) currentRoomId = roomInput.value.trim().toUpperCase();
     state.players = data.players;
     showLobby(currentRoomId, data.hostId);
 });
